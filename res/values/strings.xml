@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Get IP Address</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="explanation_screen">This application shows your interface address.</string>
+    <string name="btgetipaddress">Get IP Address</string>
+
+</resources>
