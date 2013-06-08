@@ -1,6 +1,7 @@
 package org.acs.getipaddress;
 
-public class AndroidNetInterface {
+public class AndroidNetInterface 
+{
 	
 	String Name = null;
 	String Type = null;
@@ -18,11 +19,13 @@ public class AndroidNetInterface {
 	
 	private void setName(String n)
 	{
-		if( (!n.isEmpty()) && (n!=null) && (!n.isEmpty(n.trim())) )
-		{
-			this.Name = n;
-		} else {
-			//
+		try { 
+			if( (!(n.length() == 0)) && (n!=null) && n.trim()!= "" )
+			{
+				this.Name = n;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -33,3 +36,6 @@ public class AndroidNetInterface {
 	}
 
 }
+
+
+

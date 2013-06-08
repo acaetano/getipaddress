@@ -32,7 +32,6 @@ public class ShowAddress extends Activity
 			e.printStackTrace();
 		}
 		
-		Log.d("Get IP Address", "passei do try: "+rec_addr);
 		String[] arr_rec_addr = Str2ArrStr(rec_addr,"]]]");
 		ArrayAdapter<String> list_addr = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arr_rec_addr);
 		lv_address.setAdapter(list_addr);
@@ -74,18 +73,21 @@ public class ShowAddress extends Activity
 	private String get_intf() throws SocketException{
 		
 		String retorno = ""; //defining as null crashes the Dalvik VM
-				
+						
 		for(Enumeration<NetworkInterface> list_intf = NetworkInterface.getNetworkInterfaces(); list_intf.hasMoreElements();)
 		    {
 				NetworkInterface intf = list_intf.nextElement();
 				
 				retorno = retorno.concat(intf.getName());
-				retorno = retorno.concat("\n");
-				for (Enumeration<InetAddress> i = intf.getInetAddresses(); i.hasMoreElements();)
-				{
-					byte[] ip = ((InetAddress) i).getAddress();
-					//continuar daqui
-				}	
+				try {
+					for (Enumeration<InetAddress> i = intf.getInetAddresses(); i.hasMoreElements();)
+					{
+						byte[] ip = ((InetAddress) i).getAddress();
+						retorno = retorno.concat( new String(ip) );
+					}
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
 				retorno = retorno.concat("]]]");
 				Log.d("Get IP Address", "retorno dentro for: "+retorno);
 			}
@@ -100,4 +102,6 @@ public class ShowAddress extends Activity
 		intf_info = ni.toString();		
 		return intf_info;
 	}
+	
+		
 }
