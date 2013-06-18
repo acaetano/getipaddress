@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/tv_list_interfaces_name"
+        style="@style/tv_lv_name"
+        android:text="@string/empty" />
+    <TextView
+        android:id="@+id/tv_list_interfaces_hwaddress"
+        style="@style/tv_lv_comment"
+        android:text="@string/empty" />
+    
+
+</LinearLayout>

@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="explanation_screen">This application shows your interface address.</string>
     <string name="btgetipaddress">Get IP Address</string>
+    <string name="empty">Empty</string>
 
 </resources>

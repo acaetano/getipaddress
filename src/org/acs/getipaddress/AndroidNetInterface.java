@@ -7,8 +7,8 @@ public class AndroidNetInterface
 	String Type = null;
 	String IPAddress = null;
 	String MacAddress = null;
-	byte INetAddress = 0x0;
-	byte HWAddress = 0x0;
+	byte[] INetAddress = null;
+	byte[] HWAddress = null;
 	boolean hasSubInterfaces = false;
 	int numberSubinterfaces = 0;
 	
@@ -17,22 +17,54 @@ public class AndroidNetInterface
 		
 	}
 	
-	private void setName(String n)
+	void setName(String n)
 	{
 		try { 
 			if( (!(n.length() == 0)) && (n!=null) && n.trim()!= "" )
 			{
-				this.Name = n;
+				Name = n;
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	private String getName()
+	String getName()
 	{
-		return this.Name;
+		return Name;
 		
+	}
+	
+	void setHWAddress(byte[] hw)
+	{
+		HWAddress = hw;
+		MacAddress = new String(hw);
+	}
+	
+	byte[] getHWAddress()
+	{
+		return HWAddress;
+	}
+	
+	void setINetAddress(byte[] ip)
+	{
+		INetAddress = ip;
+		IPAddress = ip_byte2str(ip);
+	}
+	
+	private static String ip_byte2str(byte[] rawBytes) {
+	     int i = 4;
+	     String ipAddress = "";
+	     for (byte raw : rawBytes)
+	     {
+	         ipAddress += (raw & 0xFF);
+	         if (--i > 0)
+	         {
+	             ipAddress += ".";
+	         }
+	     }
+
+	     return ipAddress;
 	}
 
 }

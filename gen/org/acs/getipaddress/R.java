@@ -29,14 +29,17 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090003;
+        public static final int action_settings=0x7f090005;
         public static final int bt_explanation_screen=0x7f090000;
-        public static final int lv_network_info=0x7f090002;
+        public static final int lv_network_info=0x7f090004;
         public static final int tv_explanation_screen=0x7f090001;
+        public static final int tv_list_interfaces_hwaddress=0x7f090003;
+        public static final int tv_list_interfaces_name=0x7f090002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int show_address=0x7f030001;
+        public static final int item_lv_interfaces=0x7f030001;
+        public static final int show_address=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -45,6 +48,7 @@ public final class R {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int btgetipaddress=0x7f060004;
+        public static final int empty=0x7f060005;
         public static final int explanation_screen=0x7f060003;
         public static final int hello_world=0x7f060002;
     }
@@ -75,5 +79,7 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
+        public static final int tv_lv_comment=0x7f070003;
+        public static final int tv_lv_name=0x7f070002;
     }
 }
